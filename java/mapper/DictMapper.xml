@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DictDao">
+
+    <select id="getById" parameterType="java.lang.Integer" resultType="com.domain.Dict">
+            select * FROM jy_dict WHERE id=#{id}
+    </select>
+
+    <select id="list" resultType="com.domain.Dict">
+           SELECT * FROM  jy_dict
+    </select>
+
+    <select id="getwenli" resultType="com.domain.Dict">
+            SELECT * FROM  jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_wenli")
+    </select>
+
+    <select id="getpici"  resultType="com.domain.Dict">
+             SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_pici")
+    </select>
+
+    <select id="getsckind" resultType="com.domain.Dict">
+             SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_kind")
+    </select>
+
+    <select id="getsccategory"  resultType="com.domain.Dict">
+        SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_category")
+    </select>
+
+    <select id="getscbelong"  resultType="com.domain.Dict">
+        SELECT * FROM jy_dict WHERE  dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_belong")
+    </select>
+
+    <select id="getscproperty" resultType="com.domain.Dict">
+        SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_property")
+    </select>
+
+    <select id="getDictAmount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM  jy_dict
+    </select>
+
+    <select id="paginationEntity" parameterType="com.core.page.Pagination" resultType="com.domain.Dict">
+         SELECT * FROM jy_dict limit #{start},#{pageSize}
+    </select>
+
+    <select id="getSchoolBelongTag" resultType="com.domain.Dict">
+        SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_belongtag")
+    </select>
+
+    <insert id="add" parameterType="com.domain.Dict">
+             INSERT INTO jy_dict (dictId,dictMapId,showName) VALUES (#{dictId},#{dictMapId},#{showName})
+    </insert>
+
+    <update id="update" parameterType="com.domain.Dict">
+        UPDATE jy_dict SET
+        <if test="dictMapId !=null">
+            dictMapId=#{dictMapId},
+        </if>
+        <if test="showName!=null">
+            showName=#{showName}
+        </if>
+        WHERE dictId=#{dictId}
+    </update>
+
+    <delete id="delete" parameterType="com.domain.Dict">
+        DELETE FROM jy_dict WHERE dictId=#{dictId}
+    </delete>
+
+
+</mapper>

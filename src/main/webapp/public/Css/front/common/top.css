@@ -1,0 +1,67 @@
+img
+	{
+		margin-left: 80px;
+		float: left;
+	}
+	body
+	{
+		background-color:  rgb(237, 237, 237);
+	}
+	p{
+		float: left;
+		margin-top:30px; 
+		margin-left: 150px;
+	}
+	div.main{
+      height: 77px;
+      color: #333;
+	}
+	a.index
+	{
+		float: left;
+		display: block;
+		margin-top: 30px;
+		margin-left: 50px;
+		color: #000;
+	}
+    a.out
+    {
+    	float: left;
+		display: block;
+		margin-top: 30px;
+		color: #000;
+		margin-left: 30px;
+    }
+	label{
+		font-family: 微软雅黑;
+		font-weight: normal;
+	}
+	label.lab
+	{
+	    font-family: 微软雅黑;
+	    font-weight: normal;	
+	}
+	 @media (max-width: 980px)
+     {
+     	.lap
+     	{
+     		margin-left: -30px;
+     	}
+     	a.index{
+     		float: left;
+     	}
+     	p{
+     		float: left;
+     		margin-left: 40px;
+     	}
+     	a.out
+     	{
+     		float: left;
+     		display: block;
+     		margin-left: 30px;
+     	}
+     	img{
+     		margin-left: 30px;
+     	}
+
+     }

@@ -1,0 +1,66 @@
+body{
+		background-color: rgb(237, 237, 237);
+	}
+	.col-md-12
+	{
+		margin-left: -30px;
+	}
+	.container
+	{
+		padding-left: 0px;
+		margin-left: 25px;
+		margin-right: 10px;
+	}
+	p.p-note
+	{
+		margin-left: 5px;
+		margin-top: 5px;
+	}
+	.p-note-col
+	{
+		margin-top: 10px;
+		margin-left: 5px;
+		border: solid 1px green;
+		height: 60px;
+		background-color: white;
+	}
+  .text-red
+  {
+  	color: red;
+  }
+
+  #checkcondition
+  {
+  	margin-top: 10px;
+  	background-color: white;
+  	border: solid 1px green;
+  	height: 120px;
+  	margin-left: 8px;
+  }
+  .col-md-8
+  {
+  	margin-top: 5px;
+  	margin-left: 5px;
+  }
+  input.input-name
+  {
+  	margin-top: 5px;
+  	margin-left: 10px;
+  }
+ select.first
+ {
+ 	margin-left: 50px;
+ }
+ select
+ {
+ 	margin-right: 50px;
+ }
+ .list
+ {
+ 	margin-top: 10px;
+ }
+ input.commit
+ {
+ 	margin-top: 5px;
+ 	margin-left: 40px;
+ }

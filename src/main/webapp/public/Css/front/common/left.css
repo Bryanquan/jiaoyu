@@ -1,0 +1,35 @@
+li{
+	list-style: none;
+}
+.title{cursor:pointer;}
+	.col-md-12{
+		margin-top: 20px;
+	}
+	li
+	{
+		margin-left: -30px;
+		margin-bottom:5px; 
+		height: 20px;
+		margin-top:5px; 
+	}
+	.container
+	{
+		height: 560px;
+		margin-left: 40px;
+	}
+	body
+	{
+		background-color: rgb(237, 237, 237);
+	}
+     .center-block
+     {
+     	margin-top:100px; 
+     }
+     option
+     {
+     	width: 50px;
+     }
+     select.first
+     {
+     	margin-left: 10px;
+     }

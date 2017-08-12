@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.FrontControlDao">
+
+    <select id="getById" parameterType="int" resultType="com.domain.FrontControl">
+        SELECT * FROM jy_front_control WHERE id=#{id}
+    </select>
+
+    <select id="getByPid" parameterType="int" resultType="com.domain.FrontControl">
+           SELECT  * FROM jy_front_control WHERE pid=#{pid}
+    </select>
+
+    <select id="getFrontControlAmount" resultType="int">
+        SELECT COUNT(*) FROM jy_front_control
+    </select>
+
+    <select id="list" resultType="com.domain.FrontControl">
+        SELECT * FROM jy_front_control
+    </select>
+
+    <insert id="add" parameterType="com.domain.FrontControl">
+       INSERT INTO jy_front_control (pid,title,url,status,mark) VALUES(#{pid},#{title},#{url},#{status},#{mark})
+    </insert>
+
+    <delete id="delete" parameterType="com.domain.FrontControl">
+        DELETE FROM jy_front_control WHERE id=#{id}
+    </delete>
+
+    <update id="update" parameterType="com.domain.FrontControl">
+        UPDATE jy_front_control set pid=#{pid},title=#{title},url=#{url},status=#{status},mark=#{mark}
+    </update>
+
+    <!-- 查找主条目-->
+    <select id="listById" resultType="com.domain.FrontControl">
+            SELECT * FROM jy_front_control WHERE pid=0
+    </select>
+
+    <!--查找附属条目-->
+    <select id="listByPid" resultType="com.domain.FrontControl">
+            SELECT * FROM jy_front_control WHERE pid!=0
+    </select>
+
+    <select id="getByTitle" parameterType="String" resultType="com.domain.FrontControl">
+              SELECT  * FROM jy_front_control WHERE title=#{title}
+    </select>
+
+    <select id="paginationEntity" parameterType="com.core.page.Pagination" resultType="com.domain.FrontControl">
+             SELECT * FROM jy_front_control LIMIT #{start} , #{pageSize}
+    </select>
+
+</mapper>

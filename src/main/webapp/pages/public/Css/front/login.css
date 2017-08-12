@@ -1,0 +1,21 @@
+input
+{
+  margin-bottom: 15px;
+  height: 20px;
+  width: 200px;
+}
+.login
+{
+	margin-top: 200px;
+	margin-left: 500px;
+}
+h1.title
+{
+	font-size: 18px;
+	margin-left: 50px;
+}
+button.submit_button
+{
+	width: 50px;
+	height: 40px;
+}
