@@ -10,7 +10,7 @@ public class CommonUtil {
         return object == null;
     }
 
-    public static boolean isnotNull(Object object) {
+    public static boolean isNotNull(Object object) {
         return object != null;
     }
 
