@@ -1,5 +1,9 @@
 package com.controller;
 
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
+import static org.springframework.web.bind.annotation.RequestMethod.PATCH;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 import com.domain.Vip;
 import com.service.VipService;
 import com.util.CommonUtil;
@@ -20,7 +24,7 @@ public class VipController {
     @Autowired
     private VipService vipService;
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login", method = POST )
     public String login(String name, String userpwd, HttpServletRequest request)
             throws IOException {
         String username = name;
@@ -32,7 +36,7 @@ public class VipController {
         HttpSession session = request.getSession();
         SessionUser sessionUser = new SessionUser();
         sessionUser.setId(session.getId());
-        if (!CommonUtil.isNull(vip) && vip.getUserpwd().equals(userpwd)) {
+        if (CommonUtil.isNotNull(vip) && vip.getUserpwd().equals(userpwd)) {
             sessionUser.setLoginname(vip.getTruename());
             sessionUser.setLoginpwd(vip.getUserpwd());
             SessionUtil.setSessionUser(request, sessionUser);
@@ -42,13 +46,13 @@ public class VipController {
         }
     }
 
-    @RequestMapping(value = "/loginout")
+    @RequestMapping(value = "/loginout", method = POST)
     public String loginout(HttpServletRequest request) {
         SessionUtil.removeSessionUser(request);
         return "redirect:/login.jsp";
     }
 
-    @RequestMapping(value = "/add")
+    @RequestMapping(value = "/add", method = POST)
     public String add(Vip vip, HttpServletRequest request) {
 
         if (!SessionUtil.isLogin(request)) {
@@ -66,7 +70,7 @@ public class VipController {
 
     }
 
-    @RequestMapping(value = "/delete")
+    @RequestMapping(value = "/delete", method = DELETE)
     public String delete(String Id, Vip vip, HttpServletRequest request) {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
@@ -77,7 +81,7 @@ public class VipController {
         return "Admin/Vip/list";
     }
 
-    @RequestMapping(value = "/update")
+    @RequestMapping(value = "/update", method = PATCH)
     public String update(String Id, Vip vip, HttpServletRequest request) {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
