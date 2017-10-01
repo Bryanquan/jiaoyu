@@ -1,5 +1,6 @@
 package com.aspects;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.core.Ordered;
 
@@ -14,8 +15,8 @@ public class logControl implements Ordered {
     }
 
     @Around("logAopController()")
-    public void log() {
-
+    public void log(ProceedingJoinPoint joinPoint) throws Throwable {
+          joinPoint.proceed();
     }
 
 

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -31,7 +32,7 @@ public class FrontControlController {
 
     //主附属条目处理方法
 
-    @RequestMapping(value = "/LeftFrame")
+    @RequestMapping(value = "/LeftFrame", method = RequestMethod.GET)
     public String listById(ModelMap map, HttpServletRequest request) {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
@@ -43,7 +44,7 @@ public class FrontControlController {
         return "Home/Vip/left";
     }
 
-    @RequestMapping(value = "/RightFrame")
+    @RequestMapping(value = "/RightFrame", method = RequestMethod.GET)
     public String RightFrame(HttpServletRequest request) {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
@@ -51,7 +52,7 @@ public class FrontControlController {
         return "Home/Vip/right";
     }
 
-    @RequestMapping(value = "/getBySchool_info")
+    @RequestMapping(value = "/getBySchool_info", method = RequestMethod.GET)
     public String getBySchool_info(HttpServletRequest request, ModelMap map) {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
