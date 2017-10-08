@@ -17,7 +17,7 @@ public class Md5Util {
             }
             return builder.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getCause());
             return null;
         }
     }
