@@ -9,23 +9,23 @@ import java.util.List;
 @Repository
 public interface DictDao {
 
-    public Dict getById(Integer dictId);
+    public Dict findOne(Integer id);
 
     public List<Dict> list();
 
     public List<Dict> paginationEntity(Pagination<Dict> pagination);
 
-    public List<Dict> getwenli();
+    public List<Dict> getWenli();
 
-    public List<Dict> getpici();
+    public List<Dict> getPici();
 
-    public List<Dict> getsckind();
+    public List<Dict> getSckind();
 
-    public List<Dict> getsccategory();
+    public List<Dict> getSccategory();
 
-    public List<Dict> getscproperty();
+    public List<Dict> getScproperty();
     
-    public List<Dict> getscbelong();
+    public List<Dict> getScbelong();
 
     public Integer getDictAmount();
 

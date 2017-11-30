@@ -6,29 +6,29 @@ import com.domain.Dict;
 import java.util.List;
 
 public interface DictService {
-    public Dict getById(Integer dictId);
+    public Dict findOne(Integer id);
 
     public List<Dict> list();
 
     public Pagination<Dict> pagination(Pagination<Dict> pagination);
 
     //获取文理科分类
-    public List<Dict> getwenli();
+    public List<Dict> getWenli();
 
     //获取批次分类
-    public List<Dict> getpici();
+    public List<Dict> getPici();
 
     //获取办学类型分类
-    public List<Dict> getsckind();
+    public List<Dict> getSckind();
 
     //获取院校性质类别分类
-    public List<Dict> getsccategory();
+    public List<Dict> getSccategory();
 
     //获取院校性质类别分类
-    public List<Dict> getscproperty();
+    public List<Dict> getScproperty();
 
     //获取院校隶属类别分类
-    public List<Dict> getscbelong();
+    public List<Dict> getScbelong();
 
     public List<Dict> getSchoolBelongTag();
 

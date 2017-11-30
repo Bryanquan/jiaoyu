@@ -17,8 +17,8 @@ public class DictServiceImpl implements DictService{
     @Autowired
     private DictDao dictDao;
 
-    public Dict getById(Integer dictId) {
-        return dictDao.getById(dictId);
+    public Dict findOne(Integer id) {
+        return dictDao.findOne(id);
     }
 
 
@@ -36,33 +36,33 @@ public class DictServiceImpl implements DictService{
     }
 
 
-    public List<Dict> getwenli() {
-        return dictDao.getwenli();
+    public List<Dict> getWenli() {
+        return dictDao.getWenli();
     }
 
 
-    public List<Dict> getpici() {
-        return dictDao.getpici();
+    public List<Dict> getPici() {
+        return dictDao.getPici();
     }
 
 
-    public List<Dict> getsckind() {
-        return dictDao.getsckind();
+    public List<Dict> getSckind() {
+        return dictDao.getSckind();
     }
 
 
-    public List<Dict> getsccategory() {
-        return dictDao.getsccategory();
+    public List<Dict> getSccategory() {
+        return dictDao.getSccategory();
     }
 
 
-    public List<Dict> getscproperty() {
-        return dictDao.getscproperty();
+    public List<Dict> getScproperty() {
+        return dictDao.getScproperty();
     }
 
 
-    public List<Dict> getscbelong() {
-        return dictDao.getscbelong();
+    public List<Dict> getScbelong() {
+        return dictDao.getScbelong();
     }
 
 

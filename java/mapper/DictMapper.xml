@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.DictDao">
 
-    <select id="getById" parameterType="java.lang.Integer" resultType="com.domain.Dict">
+    <select id="findOne" parameterType="java.lang.Integer" resultType="com.domain.Dict">
             select * FROM jy_dict WHERE id=#{id}
     </select>
 
@@ -11,7 +11,7 @@
            SELECT * FROM  jy_dict
     </select>
 
-    <select id="getwenli" resultType="com.domain.Dict">
+    <select id="getWenli" resultType="com.domain.Dict">
             SELECT * FROM  jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_wenli")
     </select>
 
@@ -19,19 +19,19 @@
              SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_pici")
     </select>
 
-    <select id="getsckind" resultType="com.domain.Dict">
+    <select id="getSckind" resultType="com.domain.Dict">
              SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_kind")
     </select>
 
-    <select id="getsccategory"  resultType="com.domain.Dict">
+    <select id="getSccategory"  resultType="com.domain.Dict">
         SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_category")
     </select>
 
-    <select id="getscbelong"  resultType="com.domain.Dict">
+    <select id="getScbelong"  resultType="com.domain.Dict">
         SELECT * FROM jy_dict WHERE  dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_belong")
     </select>
 
-    <select id="getscproperty" resultType="com.domain.Dict">
+    <select id="getScproperty" resultType="com.domain.Dict">
         SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_property")
     </select>
 
