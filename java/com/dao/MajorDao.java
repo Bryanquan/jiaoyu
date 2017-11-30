@@ -8,9 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MajorDao
-{
-    public Major  getById(Integer id);
+public interface MajorDao {
+    public Major getById(Integer id);
 
     public List<Major> list();
 

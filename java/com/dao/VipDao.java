@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface VipDao
-{
+public interface VipDao {
     public Vip getById(Integer id);
 
     public Vip getByUsername(String usernname);
@@ -21,9 +20,9 @@ public interface VipDao
 
     public Integer getVipAmount();
 
-    public void    add(Vip vip);
+    public void add(Vip vip);
 
-    public void    delete(Vip vip);
+    public void delete(Vip vip);
 
-    public void    update(Vip vip);
+    public void update(Vip vip);
 }

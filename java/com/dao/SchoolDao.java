@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SchoolDao
-{
+public interface SchoolDao {
     public School getById(Integer id);
 
     public School getSchoolByName(School school);
@@ -17,11 +16,11 @@ public interface SchoolDao
 
     public Integer getSchoolAmount();
 
-    public void   add(School school);
+    public void add(School school);
 
-    public void   update(School school);
+    public void update(School school);
 
-    public void   delete(School school);
+    public void delete(School school);
 
     public List<School> listBySchool(School school);
 

@@ -57,12 +57,12 @@ public class FrontControlController {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
         }
-        List<Dict> sc_belong = dictService.getscbelong();
-        List<Dict> sc_kind = dictService.getsckind();
-        List<Dict> sc_category = dictService.getsccategory();
-        List<Dict> sc_property = dictService.getscproperty();
-        List<Dict> sc_pic = dictService.getpici();
-        map.addAttribute("sc_belong", dictService.getscbelong());
+        List<Dict> sc_belong = dictService.getScbelong();
+        List<Dict> sc_kind = dictService.getSckind();
+        List<Dict> sc_category = dictService.getSccategory();
+        List<Dict> sc_property = dictService.getScproperty();
+        List<Dict> sc_pic = dictService.getPici();
+        map.addAttribute("sc_belong", dictService.getScbelong());
         map.addAttribute("sc_category", sc_category);
         map.addAttribute("sc_kind", sc_kind);
         map.addAttribute("sc_property", sc_property);
@@ -92,11 +92,11 @@ public class FrontControlController {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
         }
-        List<Dict> sc_belong = dictService.getscbelong();
-        List<Dict> sc_category = dictService.getsccategory();
-        List<Dict> sc_kind = dictService.getsckind();
-        List<Dict> sc_property = dictService.getscproperty();
-        List<Dict> sc_pici = dictService.getpici();
+        List<Dict> sc_belong = dictService.getScbelong();
+        List<Dict> sc_category = dictService.getSccategory();
+        List<Dict> sc_kind = dictService.getSckind();
+        List<Dict> sc_property = dictService.getScproperty();
+        List<Dict> sc_pici = dictService.getPici();
         List<Dict> sc_belongTag=dictService.getSchoolBelongTag();
         List<School> schools=schoolService.displayDefault();
         map.addAttribute("sc_belong", sc_belong);
