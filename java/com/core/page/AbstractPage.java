@@ -41,9 +41,10 @@ public abstract class AbstractPage<E> implements Page<E> {
         return items;
     }
 
-    public void setItems(Collection<E> items)
-    {
-        if (items == null) items = Collections.emptyList();//初始化一个空列表
+    public void setItems(Collection<E> items) {
+        if (items == null) {
+            items = Collections.emptyList();//初始化一个空列表
+        }
         /**
          * 构造一个包含指定 collection 的元素的列表，这些元素是按照该
          *collection 的迭代器返回它们的顺序排列的。
