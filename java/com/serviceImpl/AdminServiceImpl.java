@@ -13,19 +13,19 @@ public class AdminServiceImpl implements AdminService{
     @Autowired
     private AdminDao adminDao;
 
-    public Admin getById(Integer id) {
-        return adminDao.getById(id);
+    public Admin findOne(Integer id) {
+        return adminDao.findOne(id);
     }
 
 
-    public Admin getByName(String username) {
-        return adminDao.getByName(username);
+    public Admin findByName(String username) {
+        return adminDao.findByName(username);
     }
 
 
 
-    public Admin getById(String id) {
-        return adminDao.getById(id);
+    public Admin findOne(String id) {
+        return adminDao.findOne(id);
     }
 
 
@@ -48,8 +48,8 @@ public class AdminServiceImpl implements AdminService{
     }
 
 
-    public Admin getByUseraccount(String useraccount) {
-        return adminDao.getByUseraccount(useraccount);
+    public Admin findByUseraccount(String useraccount) {
+        return adminDao.findByUserAccount(useraccount);
     }
 
     public void add(Admin admin) {

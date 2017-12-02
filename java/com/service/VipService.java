@@ -5,8 +5,7 @@ import com.domain.Vip;
 
 import java.util.List;
 
-public interface VipService
-{
+public interface VipService {
     public Vip getById(Integer id);
 
     public Vip getByUsername(String usernname);
@@ -19,9 +18,9 @@ public interface VipService
 
     public Integer getVipAmount();
 
-    public void    add(Vip vip);
+    public void add(Vip vip);
 
-    public void    delete(Vip vip);
+    public void delete(Vip vip);
 
-    public void    update(Vip vip);
+    public void update(Vip vip);
 }

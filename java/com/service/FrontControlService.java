@@ -5,24 +5,24 @@ import com.domain.FrontControl;
 
 import java.util.List;
 
-public interface FrontControlService
-{
-    public FrontControl getById(Integer id);
+public interface FrontControlService {
+    public FrontControl findOne(Integer id);
 
-    public FrontControl getByPid(Integer pid);
+    public FrontControl findByPid(Integer pid);
 
     //查找pid为空主条目
-    public  List<FrontControl> listById();
+    public List<FrontControl> listById();
 
-    public FrontControl getByTitle(String title);
+    public FrontControl findByTitle(String title);
 
     //查找pid不为空的附属条目
-    public List<FrontControl>  listByPid();
+    public List<FrontControl> listByPid();
 
     public List<FrontControl> list();
 
     /**
      * 两个分页处理方法
+     *
      * @param startNum
      * @param pageSize
      * @return

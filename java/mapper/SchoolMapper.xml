@@ -6,25 +6,25 @@
     <select id="getById" parameterType="int" resultType="com.domain.School">
          SELECT * FROM jy_schoolinfo WHERE id=#{id}
     </select>
-    
+
     <select id="list" resultType="com.domain.School">
             SELECT * FROM jy_schoolinfo
     </select>
-    
+
     <select id="getSchoolAmount" resultType="int">
              SELECT COUNT(*) FROM jy_schoolinfo
     </select>
-    
+
     <insert id="add" parameterType="com.domain.School">
              INSERT INTO jy_schoolinfo (sc_code,sc_name,sc_address,sc_pici,sc_wenli,
              sc_site,sc_category,sc_kind,sc_tag,sc_belong,sc_belongtag,sc_property) VALUES(#{sc_code},#{sc_name},#{sc_address},
              #{sc_pici},#{sc_wenli},#{sc_site},#{sc_category},#{sc_kind},#{sc_tag},#{sc_belong},#{sc_belongtag},#{sc_property})
     </insert>
-    
+
     <delete id="delete" parameterType="com.domain.School">
              DELETE FROM jy_schoolinfo WHERE id=#{id}
     </delete>
-      
+
     <update id="update" parameterType="com.domain.School">
              UPDATE jy_schoolinfo set id=#{id},sc_code=#{sc_code},sc_name=#{sc_name},sc_address=#{sc_address},sc_pici=#{sc_pici},
              sc_site=#{sc_site},sc_category={sc_category},sc_kind=#{sc_kind},sc_tag=#{sc_tag},sc_belong=#{sc_belong},sc_belongtag={sc_belongtag},
@@ -36,30 +36,30 @@
     </select>
 
     <select id="listBySchool" parameterType="com.domain.School" resultType="com.domain.School">
-            SELECT * FROM jy_schoolinfo WHERE
-            <if test="sc_name !=null ">
-                and sc_name=#{sc_name}
-            </if>
-        
-            <if test="sc_belong !=null ">
-                and sc_belong=#{sc_belong}
-            </if>
-            
-           <if test="sc_catagory !=null">
-                 and sc_catagory=#{sc_catagory}
-           </if>
+        SELECT * FROM jy_schoolinfo WHERE
+        <if test="sc_name !=null ">
+            and sc_name=#{sc_name}
+        </if>
 
-           <if test="sc_kind !=null">
-                 and sc_kind=#{sc_kind}
-           </if>
-          
-           <if test="pici !=null">
-               and pici=#{pici}
-           </if>
-        
-           <if test="sc_catagory !=null">
-                and sc_catagory=#{sc_catagory}
-           </if>
+        <if test="sc_belong !=null ">
+            and sc_belong=#{sc_belong}
+        </if>
+
+        <if test="sc_catagory !=null">
+            and sc_catagory=#{sc_catagory}
+        </if>
+
+        <if test="sc_kind !=null">
+            and sc_kind=#{sc_kind}
+        </if>
+
+        <if test="pici !=null">
+            and pici=#{pici}
+        </if>
+
+        <if test="sc_catagory !=null">
+            and sc_catagory=#{sc_catagory}
+        </if>
     </select>
 
     <select id="getSchoolByName" parameterType="com.domain.School" resultType="com.domain.School">
@@ -69,4 +69,4 @@
     <select id="displayDefault" resultType="com.domain.School">
         SELECT * from jy_schoolinfo limit 0,10
     </select>
-    </mapper>
+</mapper>

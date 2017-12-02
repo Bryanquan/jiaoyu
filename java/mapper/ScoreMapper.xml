@@ -18,84 +18,84 @@
     <select id="getScoreAmount" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM jy_scre 
     </select>
-    
+
     <insert id="add" parameterType="com.domain.Score">
         INSERT INTO jy_score (major,school,YearNum,lq_minScore,lq_maxScore,lq_averScore,wenli,pici,planNum)
         VALUES (#{major},#{school},#{year},#{lq_minScore},#{lq_maxScore},#{lq_averScore},#{wenli},#{pici},
         #{planNum})
     </insert>
-    
+
     <delete id="delete" parameterType="com.domain.Score">
         DELETE FROM  jy_score WHERE id=#{id}
     </delete>
 
     <update id="update">
-         UPDATE jy_score
-         SET
+        UPDATE jy_score
+        SET
 
-         <if test="school !=null">
-             school=#{school},
-         </if>
+        <if test="school !=null">
+            school=#{school},
+        </if>
 
-         <if test="major !=null">
-             major=#{major},
-         </if>
+        <if test="major !=null">
+            major=#{major},
+        </if>
 
-         <if test="YearNum !=null">
+        <if test="YearNum !=null">
             YearNum=#{YearNum},
-         </if>
+        </if>
 
-         <if test="lq_minScore !=null">
+        <if test="lq_minScore !=null">
             lq_minScore={lq_minScore},
-         </if>
+        </if>
 
-          <if test="lq_maxScore !=null">
+        <if test="lq_maxScore !=null">
             lq_maxScore={lq_maxScore},
-          </if>
+        </if>
 
-          <if test="lq_averScore !null">
-              lq_averScore=#{lq_averScore},
-          </if>
+        <if test="lq_averScore !null">
+            lq_averScore=#{lq_averScore},
+        </if>
 
-          <if test="wenli ">
-              wenli={wenli},
-          </if>
+        <if test="wenli ">
+            wenli={wenli},
+        </if>
 
-          <if test="pici !=null">
-              pici={pici},
-          </if>
+        <if test="pici !=null">
+            pici={pici},
+        </if>
 
-          <if test="planNum !=null">
-              planNum={planNum}
-          </if>
+        <if test="planNum !=null">
+            planNum={planNum}
+        </if>
 
     </update>
 
-    <select id="listBySchoolAndScore"  parameterType="java.util.Map" resultType="com.domain.Score">
-               SELECT * FROM jy_score WHERE
-               <if test="params.pici!=null">
-                    and pici=#{pici}
-               </if>
-              
-               <if test="params.score !=null">
-                     AND
-                   lq_minScore &gt;= #{params.score.lq_minScore}
-                   AND lq_maxScore &lt;={params.score.lq_maxScore}
-               </if>
-        
-               <if test="params.yearNum !=null">
-                        AND yearNum in
-                       <foreach collection="params.yearNum" item="year" index="index" open="(" separator="," close=")">
-                                      #{year}
-                       </foreach>
-               </if>
+    <select id="listBySchoolAndScore" parameterType="java.util.Map" resultType="com.domain.Score">
+        SELECT * FROM jy_score WHERE
+        <if test="params.pici!=null">
+            and pici=#{pici}
+        </if>
 
-                <if test="params.yearNum !=null">
-                    AND school in
-                    <foreach collection="params.schools" item="school" index="index" open="(" separator="," close=")">
-                        #{school}
-                    </foreach>
-                </if>
+        <if test="params.score !=null">
+            AND
+            lq_minScore &gt;= #{params.score.lq_minScore}
+            AND lq_maxScore &lt;={params.score.lq_maxScore}
+        </if>
+
+        <if test="params.yearNum !=null">
+            AND yearNum in
+            <foreach collection="params.yearNum" item="year" index="index" open="(" separator="," close=")">
+                #{year}
+            </foreach>
+        </if>
+
+        <if test="params.yearNum !=null">
+            AND school in
+            <foreach collection="params.schools" item="school" index="index" open="(" separator="," close=")">
+                #{school}
+            </foreach>
+        </if>
     </select>
 
 </mapper>

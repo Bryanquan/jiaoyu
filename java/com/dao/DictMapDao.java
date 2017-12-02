@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface DictMapDao {
 
-    public DictMap getById(Integer dictMapId);
+    public DictMap findOne(Integer dictMapId);
 
     public List<DictMap> list();
 

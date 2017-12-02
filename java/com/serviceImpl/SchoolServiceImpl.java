@@ -20,12 +20,12 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
 
-    public School getById(Integer id) {
-        return schooldao.getById(id);
+    public School findOne(Integer id) {
+        return schooldao.findOne(id);
     }
 
-    public School getSchoolByName(School school) {
-        return schooldao.getSchoolByName(school);
+    public School findByName(School school) {
+        return schooldao.findByName(school);
     }
 
 

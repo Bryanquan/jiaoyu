@@ -8,9 +8,9 @@ import java.util.List;
 
 @Repository
 public interface FrontControlDao {
-    public FrontControl getById(Integer id);
+    public FrontControl findOne(Integer id);
 
-    public FrontControl getByPid(Integer pid);
+    public FrontControl findByPid(Integer pid);
 
     //查找pid为空主条目
     public List<FrontControl> listById();
@@ -20,7 +20,7 @@ public interface FrontControlDao {
 
     public List<FrontControl> list();
 
-    public FrontControl getByTitle(String title);
+    public FrontControl findByTitle(String title);
 
     public Integer getFrontControlAmount();
 

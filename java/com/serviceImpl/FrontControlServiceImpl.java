@@ -15,12 +15,12 @@ public class FrontControlServiceImpl implements FrontControlService {
     private FrontControlDao controlDao;
 
 
-    public FrontControl getById(Integer id) {
-        return controlDao.getById(id);
+    public FrontControl findOne(Integer id) {
+        return controlDao.findOne(id);
     }
 
 
-    public FrontControl getByPid(Integer pid) {
+    public FrontControl findByPid(Integer pid) {
         return controlDao.getByPid(pid);
     }
 
@@ -69,7 +69,7 @@ public class FrontControlServiceImpl implements FrontControlService {
     }
 
 
-    public FrontControl getByTitle(String title) {
-        return controlDao.getByTitle(title);
+    public FrontControl findByTitle(String title) {
+        return controlDao.findByTitle(title);
     }
 }

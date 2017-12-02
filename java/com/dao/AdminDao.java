@@ -9,11 +9,11 @@ import java.util.List;
 @Repository
 public interface AdminDao {
 
-    Admin getById(String id);
+    Admin findOne(String id);
 
-    Admin getById(Integer id);
+    Admin findOne(Integer id);
 
-    Admin getByName(String username);
+    Admin findByName(String username);
 
     List<Admin> list();
 
@@ -21,7 +21,7 @@ public interface AdminDao {
 
     List<Admin> paginationEntity(Pagination<Admin> pagination);
 
-    Admin getByUseraccount(String useraccount);
+    Admin findByUserAccount(String useraccount);
 
     void add(Admin admin);
 

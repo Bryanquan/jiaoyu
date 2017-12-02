@@ -6,26 +6,26 @@
     <select id="getById" parameterType="int" resultType="com.domain.Vip">
          SELECT * FROM jy_vip WHERE id=#{id}
     </select>
-    
+
     <select id="list" resultType="com.domain.Vip">
             SELECT * FROM jy_vip
     </select>
-    
+
     <select id="getVipAmount" resultType="int">
              SELECT COUNT(*) FROM jy_vip
     </select>
-    
+
     <select id="getByUsername" parameterType="String" resultType="com.domain.Vip">
              SELECT  * FROM jy_vip  WHERE username=#{username}
     </select>
     <insert id="add" parameterType="com.domain.Vip">
              INSERT INTO jy_vip (username,userpwd,email,phone,status,turename) VALUES (#{username},#{userpwd},#{email},#{phone},#{status},#{turename})
     </insert>
-    
+
     <delete id="delete" parameterType="com.domain.Vip">
              DELETE FROM jy_vip WHERE id=#{id}
     </delete>
-      
+
     <update id="update" parameterType="com.domain.Vip">
              UPDATE jy_vip set username=#{username},userpwd=#{userpwd},email=#{email},phone=#{phone},status=#{status},turename=#{turename}
              WHERE  id=#{id}
@@ -34,8 +34,8 @@
     <select id="listByPage" resultType="com.domain.Vip">
              SELECT  * FROM jy_vip LIMIT #{0},#{1}
     </select>
-    
+
     <select id="paginationEntity" parameterType="com.core.page.Pagination" resultType="com.domain.Vip">
            SELECT * FROM jy_vip LIMIT #{start} , #{pageSize}
     </select>
-    </mapper>
+</mapper>

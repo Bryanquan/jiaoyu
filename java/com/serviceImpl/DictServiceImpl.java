@@ -1,4 +1,5 @@
 package com.serviceImpl;
+
 import com.core.page.Pagination;
 import com.dao.DictDao;
 import com.domain.Dict;
@@ -6,13 +7,14 @@ import com.service.DictService;
 import com.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 /**
  * @author bryan quan
  */
 @Service
-public class DictServiceImpl implements DictService{
+public class DictServiceImpl implements DictService {
 
     @Autowired
     private DictDao dictDao;
@@ -28,9 +30,9 @@ public class DictServiceImpl implements DictService{
 
 
     public Pagination<Dict> pagination(Pagination<Dict> pagination) {
-        Integer DictAmount=dictDao.getDictAmount();
+        Integer DictAmount = dictDao.getDictAmount();
         pagination.setTotalItemsCount(DictAmount);
-        List<Dict> items=dictDao.paginationEntity(pagination);
+        List<Dict> items = dictDao.paginationEntity(pagination);
         pagination.setItems(items);
         return pagination;
     }
@@ -71,22 +73,22 @@ public class DictServiceImpl implements DictService{
     }
 
     /**
-     *  check whetherthe primary key and the associated key are null
+     * check whetherthe primary key and the associated key are null
      */
 
     public void add(Dict dict) {
-           if (CommonUtil.isNull(dict.getDictId()) || CommonUtil.isNull(dict.getDictMapId())) {
-               throw new UnsupportedOperationException("cannot assign dictId or dictMapId null");
-           }
-           dictDao.add(dict);
+        if (CommonUtil.isNull(dict.getDictId()) || CommonUtil.isNull(dict.getDictMapId())) {
+            throw new UnsupportedOperationException("cannot assign dictId or dictMapId null");
+        }
+        dictDao.add(dict);
     }
 
 
     public void update(Dict dict) {
-          if (CommonUtil.isNull(dict.getDictId())) {
-              throw new UnsupportedOperationException("Connot update Dict without dictId");
-          }
-          dictDao.update(dict);
+        if (CommonUtil.isNull(dict.getDictId())) {
+            throw new UnsupportedOperationException("Connot update Dict without dictId");
+        }
+        dictDao.update(dict);
     }
 
 
@@ -94,7 +96,7 @@ public class DictServiceImpl implements DictService{
         if (CommonUtil.isNull(dict.getDictId())) {
             throw new UnsupportedOperationException("Connot delete Dict without dictId");
         }
-         dictDao.delete(dict);
+        dictDao.delete(dict);
     }
 
     public List<Dict> getSchoolBelongTag() {

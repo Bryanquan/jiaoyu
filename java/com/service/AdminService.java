@@ -2,23 +2,24 @@ package com.service;
 
 import com.core.page.Pagination;
 import com.domain.Admin;
+
 import java.util.List;
 
 public interface AdminService {
 
-    Admin getById(String id);
+    Admin findOne(String id);
 
     List<Admin> list();
 
-    Admin getById(Integer id);
+    Admin findOne(Integer id);
 
-    Admin getByName(String username);
+    Admin findByName(String username);
 
     Integer getAdminAmount();
 
     Pagination<Admin> paginationEntity(Pagination<Admin> pagination);
 
-    Admin getByUseraccount(String useraccount);
+    Admin findByUseraccount(String useraccount);
 
     void add(Admin admin);
 

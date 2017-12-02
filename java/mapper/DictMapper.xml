@@ -15,7 +15,7 @@
             SELECT * FROM  jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_wenli")
     </select>
 
-    <select id="getpici"  resultType="com.domain.Dict">
+    <select id="getpici" resultType="com.domain.Dict">
              SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_pici")
     </select>
 
@@ -23,11 +23,11 @@
              SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_kind")
     </select>
 
-    <select id="getSccategory"  resultType="com.domain.Dict">
+    <select id="getSccategory" resultType="com.domain.Dict">
         SELECT * FROM jy_dict WHERE dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_category")
     </select>
 
-    <select id="getScbelong"  resultType="com.domain.Dict">
+    <select id="getScbelong" resultType="com.domain.Dict">
         SELECT * FROM jy_dict WHERE  dictMapId in (SELECT dictMapId FROM jy_dictmap WHERE type="sc_belong")
     </select>
 

@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.List;
 
 @Service
-public class ScoreServiceImpl implements ScoreService{
+public class ScoreServiceImpl implements ScoreService {
 
     @Autowired
     private ScoreDao scoreDao;
 
-    public Score getById(Integer id) {
-        return scoreDao.getById(id);
+    public Score findOne(Integer id) {
+        return scoreDao.findOne(id);
     }
 
     public List<Score> list() {
@@ -26,9 +26,9 @@ public class ScoreServiceImpl implements ScoreService{
     }
 
     public Pagination<Score> paginationEntity(Pagination<Score> pagination) {
-        Integer amount=scoreDao.getScoreAmount();
+        Integer amount = scoreDao.getScoreAmount();
         pagination.setTotalItemsCount(amount);
-        List<Score> items=scoreDao.paginationEntity(pagination);
+        List<Score> items = scoreDao.paginationEntity(pagination);
         pagination.setItems(items);
         return pagination;
     }
@@ -39,18 +39,19 @@ public class ScoreServiceImpl implements ScoreService{
 
     /**
      * 多个参数封装成map对象
+     *
      * @param pici
      * @param score
      * @param yearNum
      * @param schools
      * @return
      */
-    public List<Score> listBySchoolAndScore(Integer pici, Score score, List<Integer> yearNum,School[]  schools){
-        HashMap paraMap=new HashMap();
-        paraMap.put("pici",pici);
-        paraMap.put("score",score);
-        paraMap.put("yearNum",yearNum);
-        paraMap.put("schools",schools);
+    public List<Score> listBySchoolAndScore(Integer pici, Score score, List<Integer> yearNum, School[] schools) {
+        HashMap paraMap = new HashMap();
+        paraMap.put("pici", pici);
+        paraMap.put("score", score);
+        paraMap.put("yearNum", yearNum);
+        paraMap.put("schools", schools);
         return scoreDao.listBySchoolAndScore(paraMap);
     }
 
@@ -59,10 +60,10 @@ public class ScoreServiceImpl implements ScoreService{
     }
 
     public void delete(Score score) {
-       scoreDao.delete(score);
+        scoreDao.delete(score);
     }
 
     public void update(Score score) {
-       scoreDao.update(score);
+        scoreDao.update(score);
     }
 }

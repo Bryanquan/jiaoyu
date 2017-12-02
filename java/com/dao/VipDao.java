@@ -8,9 +8,9 @@ import java.util.List;
 
 @Repository
 public interface VipDao {
-    public Vip getById(Integer id);
+    public Vip findOne(Integer id);
 
-    public Vip getByUsername(String usernname);
+    public Vip findByUsername(String usernname);
 
     public List<Vip> listByPage(Integer startNum, Integer pageSize);
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface MajorDao {
-    public Major getById(Integer id);
+    public Major findOne(Integer id);
 
     public List<Major> list();
 

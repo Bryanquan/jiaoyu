@@ -10,7 +10,7 @@ import java.util.Map;
 @Repository
 public interface ScoreDao {
 
-    public Score  getById(Integer id);
+    public Score findOne(Integer id);
 
     public List<Score> list();
 

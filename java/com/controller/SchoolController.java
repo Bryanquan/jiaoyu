@@ -46,7 +46,7 @@ public class SchoolController {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
         }
-        if (!CommonUtil.isNull(schoolService.getSchoolByName(school))) {
+        if (!CommonUtil.isNull(schoolService.findByName(school))) {
             return "Admin/School/list";
         }
         schoolService.add(school);

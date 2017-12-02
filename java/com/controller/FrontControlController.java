@@ -127,7 +127,7 @@ public class FrontControlController {
         Integer status = Integer.valueOf(request.getParameter("status"));
         frontControl.setPid(pid);
         //判断有无重复title属性的记录
-        if (!CommonUtil.isNull(controlService.getByTitle(frontControl.getTitle()))) {
+        if (!CommonUtil.isNull(controlService.findByTitle(frontControl.getTitle()))) {
             return "Admin/FrontControl/list";
         } else {
             controlService.add(frontControl);

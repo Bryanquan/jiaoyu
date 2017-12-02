@@ -1,11 +1,14 @@
 package com.service;
+
 import com.core.page.Pagination;
 import com.domain.School;
 import com.domain.Score;
+
 import java.util.List;
+
 public interface ScoreService {
 
-    public Score getById(Integer id);
+    public Score findOne(Integer id);
 
     public List<Score> list();
 

@@ -8,9 +8,9 @@ import java.util.List;
 
 @Repository
 public interface SchoolDao {
-    public School getById(Integer id);
+    public School findOne(Integer id);
 
-    public School getSchoolByName(School school);
+    public School findByName(School school);
 
     public List<School> list();
 
