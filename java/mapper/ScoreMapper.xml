@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.ScoreDao">
 
-    <select id="getById" resultType="com.domain.Score">
+    <select id="findOne" resultType="com.domain.Score">
               SELECT  * FROM jy_score WHERE  id=#{id}
     </select>
 

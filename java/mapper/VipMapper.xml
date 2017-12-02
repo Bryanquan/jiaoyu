@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.VipDao">
 
-    <select id="getById" parameterType="int" resultType="com.domain.Vip">
+    <select id="findOne" parameterType="int" resultType="com.domain.Vip">
          SELECT * FROM jy_vip WHERE id=#{id}
     </select>
 
@@ -15,7 +15,7 @@
              SELECT COUNT(*) FROM jy_vip
     </select>
 
-    <select id="getByUsername" parameterType="String" resultType="com.domain.Vip">
+    <select id="findByUsername" parameterType="String" resultType="com.domain.Vip">
              SELECT  * FROM jy_vip  WHERE username=#{username}
     </select>
     <insert id="add" parameterType="com.domain.Vip">
