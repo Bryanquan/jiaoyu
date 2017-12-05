@@ -24,8 +24,8 @@ public class DictServiceImpl implements DictService {
     }
 
 
-    public List<Dict> list() {
-        return dictDao.list();
+    public List<Dict> findAll() {
+        return dictDao.findAll();
     }
 
 

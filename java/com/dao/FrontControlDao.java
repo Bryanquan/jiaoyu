@@ -13,12 +13,12 @@ public interface FrontControlDao {
     public FrontControl findByPid(Integer pid);
 
     //查找pid为空主条目
-    public List<FrontControl> listById();
+    public List<FrontControl> findById();
 
     //查找pid不为空的附属条目
-    public List<FrontControl> listByPid();
+    public List<FrontControl> findByPid();
 
-    public List<FrontControl> list();
+    public List<FrontControl> findAll();
 
     public FrontControl findByTitle(String title);
 

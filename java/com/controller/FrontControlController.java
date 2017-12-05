@@ -37,8 +37,8 @@ public class FrontControlController {
         if (!SessionUtil.isLogin(request)) {
             return "redirect:/login.jsp";
         }
-        List<FrontControl> mainlist = controlService.listById();
-        List<FrontControl> sonlist = controlService.listByPid();
+        List<FrontControl> mainlist = controlService.findById();
+        List<FrontControl> sonlist = controlService.findByPid();
         map.addAttribute("mainlist", mainlist);
         map.addAttribute("sonlist", sonlist);
         return "Home/Vip/left";

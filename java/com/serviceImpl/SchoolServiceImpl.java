@@ -15,8 +15,8 @@ public class SchoolServiceImpl implements SchoolService {
     private SchoolDao schooldao;
 
 
-    public List<School> listBySchool(School school) {
-        return schooldao.listBySchool(school);
+    public List<School> findBySchool(School school) {
+        return schooldao.findBySchool(school);
     }
 
 
@@ -29,8 +29,8 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
 
-    public List<School> list() {
-        return schooldao.list();
+    public List<School> findAll() {
+        return schooldao.findAll();
     }
 
     public Integer getSchoolAmount() {
@@ -57,8 +57,8 @@ public class SchoolServiceImpl implements SchoolService {
         return pagination;
     }
 
-    public List<School> listByPageSize(Integer startNum, Integer pageSize) {
-        return schooldao.listByPageSize(startNum, pageSize);
+    public List<School> findByPageSize(Integer startNum, Integer pageSize) {
+        return schooldao.findByPageSize(startNum, pageSize);
     }
 
     public List<School> displayDefault() {

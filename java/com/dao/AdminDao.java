@@ -15,7 +15,7 @@ public interface AdminDao {
 
     Admin findByName(String username);
 
-    List<Admin> list();
+    List<Admin> findAll();
 
     Integer getAdminAmount();
 

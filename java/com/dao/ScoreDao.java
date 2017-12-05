@@ -12,11 +12,11 @@ public interface ScoreDao {
 
     public Score findOne(Integer id);
 
-    public List<Score> list();
+    public List<Score> findAll();
 
     public List<Score> paginationEntity(Pagination<Score> pagination);
 
-    public List<Score> listBySchoolAndScore(@Param("params") Map paramMap);
+    public List<Score> findBySchoolAndScore(@Param("params") Map paramMap);
 
     public Integer getScoreAmount();
 

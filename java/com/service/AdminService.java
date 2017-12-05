@@ -9,7 +9,7 @@ public interface AdminService {
 
     Admin findOne(String id);
 
-    List<Admin> list();
+    List<Admin> findAll();
 
     Admin findOne(Integer id);
 

@@ -12,11 +12,11 @@ public interface VipDao {
 
     public Vip findByUsername(String usernname);
 
-    public List<Vip> listByPage(Integer startNum, Integer pageSize);
+    public List<Vip> findByPage(Integer startNum, Integer pageSize);
 
     public List<Vip> paginationEntity(Pagination<Vip> pagination);
 
-    public List<Vip> list();
+    public List<Vip> findAll();
 
     public Integer getVipAmount();
 

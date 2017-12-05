@@ -26,12 +26,12 @@ public class FrontControlServiceImpl implements FrontControlService {
     }
 
 
-    public List<FrontControl> list() {
-        return controlDao.list();
+    public List<FrontControl> findAll() {
+        return controlDao.findAll();
     }
 
 
-    public List<FrontControl> listByPageSize(Integer startNum, Integer pageSize) {
+    public List<FrontControl> findByPageSize(Integer startNum, Integer pageSize) {
         return controlDao.listByPageSize(startNum, pageSize);
     }
 
@@ -60,13 +60,13 @@ public class FrontControlServiceImpl implements FrontControlService {
     }
 
 
-    public List<FrontControl> listById() {
-        return controlDao.listById();
+    public List<FrontControl> findById() {
+        return controlDao.findById();
     }
 
 
-    public List<FrontControl> listByPid() {
-        return controlDao.listByPid();
+    public List<FrontControl> findByPid() {
+        return controlDao.findByPid();
     }
 
 

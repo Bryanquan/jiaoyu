@@ -12,7 +12,7 @@ public interface SchoolDao {
 
     public School findByName(School school);
 
-    public List<School> list();
+    public List<School> findAll();
 
     public Integer getSchoolAmount();
 
@@ -22,10 +22,10 @@ public interface SchoolDao {
 
     public void delete(School school);
 
-    public List<School> listBySchool(School school);
+    public List<School> findBySchool(School school);
 
     //分页处理
-    public List<School> listByPageSize(Integer startNum, Integer pageSize);
+    public List<School> findByPageSize(Integer startNum, Integer pageSize);
 
     public List<School> paginationEntity(Pagination<School> pagination);
 

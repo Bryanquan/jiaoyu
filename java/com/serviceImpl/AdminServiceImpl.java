@@ -29,8 +29,8 @@ public class AdminServiceImpl implements AdminService{
     }
 
 
-    public List<Admin> list() {
-        return adminDao.list();
+    public List<Admin> findAll() {
+        return adminDao.findAll();
     }
 
 

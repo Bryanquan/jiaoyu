@@ -6,15 +6,15 @@ import com.domain.Vip;
 import java.util.List;
 
 public interface VipService {
-    public Vip getById(Integer id);
+    public Vip findOne(Integer id);
 
     public Vip getByUsername(String usernname);
 
     public Pagination<Vip> paginationEntity(Pagination<Vip> pagination);
 
-    public List<Vip> listByPage(Integer startNum, Integer pageSize);
+    public List<Vip> findByPage(Integer startNum, Integer pageSize);
 
-    public List<Vip> list();
+    public List<Vip> findAll();
 
     public Integer getVipAmount();
 

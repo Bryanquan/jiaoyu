@@ -10,13 +10,13 @@ public interface ScoreService {
 
     public Score findOne(Integer id);
 
-    public List<Score> list();
+    public List<Score> findAll();
 
     public Pagination<Score> paginationEntity(Pagination<Score> pagination);
 
     public Integer getScoreAmount();
 
-    public List<Score> listBySchoolAndScore(Integer pici, Score score, List<Integer> yearNum, School[] schools);
+    public List<Score> findBySchoolAndScore(Integer pici, Score score, List<Integer> yearNum, School[] schools);
 
     public void add(Score score);
 

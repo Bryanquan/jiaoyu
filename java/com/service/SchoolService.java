@@ -10,7 +10,7 @@ public interface SchoolService {
 
     public School findByName(School school);
 
-    public List<School> list();
+    public List<School> findAll();
 
     public List<School> displayDefault();
 
@@ -22,9 +22,9 @@ public interface SchoolService {
 
     public void delete(School school);
 
-    public List<School> listBySchool(School school);
+    public List<School> findBySchool(School school);
 
-    public List<School> listByPageSize(Integer startNum, Integer pageSize);
+    public List<School> findByPageSize(Integer startNum, Integer pageSize);
 
     public Pagination<School> pagination(Pagination<School> pagination);
 }

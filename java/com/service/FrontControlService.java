@@ -11,14 +11,14 @@ public interface FrontControlService {
     public FrontControl findByPid(Integer pid);
 
     //查找pid为空主条目
-    public List<FrontControl> listById();
+    public List<FrontControl> findById();
 
     public FrontControl findByTitle(String title);
 
     //查找pid不为空的附属条目
-    public List<FrontControl> listByPid();
+    public List<FrontControl> findByPid();
 
-    public List<FrontControl> list();
+    public List<FrontControl> findAll();
 
     /**
      * 两个分页处理方法
@@ -27,7 +27,7 @@ public interface FrontControlService {
      * @param pageSize
      * @return
      */
-    public List<FrontControl> listByPageSize(Integer startNum, Integer pageSize);
+    public List<FrontControl> findByPageSize(Integer startNum, Integer pageSize);
 
     public Pagination<FrontControl> pagination(Pagination<FrontControl> pagination);
 

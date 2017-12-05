@@ -11,7 +11,7 @@ public interface DictMapDao {
 
     public DictMap findOne(Integer dictMapId);
 
-    public List<DictMap> list();
+    public List<DictMap> findAll();
 
     public List<DictMap> paginationEntity(Pagination<DictMap> pagination);
 

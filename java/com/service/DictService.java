@@ -8,7 +8,7 @@ import java.util.List;
 public interface DictService {
     public Dict findOne(Integer id);
 
-    public List<Dict> list();
+    public List<Dict> findAll();
 
     public Pagination<Dict> pagination(Pagination<Dict> pagination);
 

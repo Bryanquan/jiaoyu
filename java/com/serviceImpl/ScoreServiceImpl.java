@@ -21,8 +21,8 @@ public class ScoreServiceImpl implements ScoreService {
         return scoreDao.findOne(id);
     }
 
-    public List<Score> list() {
-        return scoreDao.list();
+    public List<Score> findAll() {
+        return scoreDao.findAll();
     }
 
     public Pagination<Score> paginationEntity(Pagination<Score> pagination) {
@@ -46,13 +46,13 @@ public class ScoreServiceImpl implements ScoreService {
      * @param schools
      * @return
      */
-    public List<Score> listBySchoolAndScore(Integer pici, Score score, List<Integer> yearNum, School[] schools) {
+    public List<Score> findBySchoolAndScore(Integer pici, Score score, List<Integer> yearNum, School[] schools) {
         HashMap paraMap = new HashMap();
         paraMap.put("pici", pici);
         paraMap.put("score", score);
         paraMap.put("yearNum", yearNum);
         paraMap.put("schools", schools);
-        return scoreDao.listBySchoolAndScore(paraMap);
+        return scoreDao.findBySchoolAndScore(paraMap);
     }
 
     public void add(Score score) {

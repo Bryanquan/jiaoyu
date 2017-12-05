@@ -14,7 +14,7 @@ public class VipServiceImpl implements VipService {
     @Autowired
     private VipDao vipDao;
 
-    public Vip getById(Integer id) {
+    public Vip findOne(Integer id) {
         return vipDao.findOne(id);
     }
 
@@ -22,12 +22,12 @@ public class VipServiceImpl implements VipService {
         return vipDao.findByUsername(usernname);
     }
 
-    public List<Vip> listByPage(Integer startNum, Integer pageSize) {
-        return vipDao.listByPage(startNum, pageSize);
+    public List<Vip> findByPage(Integer startNum, Integer pageSize) {
+        return vipDao.findByPage(startNum, pageSize);
     }
 
-    public List<Vip> list() {
-        return vipDao.list();
+    public List<Vip> findAll() {
+        return vipDao.findAll();
     }
 
     public Integer getVipAmount() {

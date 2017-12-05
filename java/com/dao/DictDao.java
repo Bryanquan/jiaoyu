@@ -11,7 +11,7 @@ public interface DictDao {
 
     public Dict findOne(Integer id);
 
-    public List<Dict> list();
+    public List<Dict> findAll();
 
     public List<Dict> paginationEntity(Pagination<Dict> pagination);
 

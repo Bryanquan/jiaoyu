@@ -11,7 +11,7 @@ import java.util.List;
 public interface MajorDao {
     public Major findOne(Integer id);
 
-    public List<Major> list();
+    public List<Major> findAll();
 
     public List<Major> paginationEntity(Pagination<Score> pagination);
 
