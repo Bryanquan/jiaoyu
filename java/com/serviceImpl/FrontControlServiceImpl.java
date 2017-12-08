@@ -21,11 +21,6 @@ public class FrontControlServiceImpl implements FrontControlService {
     }
 
 
-    public FrontControl findByPid(Integer pid) {
-        return controlDao.findByPid(pid);
-    }
-
-
     public List<FrontControl> findAll() {
         return controlDao.findAll();
     }

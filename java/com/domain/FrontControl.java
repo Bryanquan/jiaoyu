@@ -1,12 +1,12 @@
 package com.domain;
-public class FrontControl
-{
-    private  Integer id;
-    private  Integer pid;
-    private  String  title;
-    private  String  url;
-    private  Integer status;
-    private  String  mark;
+
+public class FrontControl {
+    private Integer id;
+    private Integer pid;
+    private String title;
+    private String url;
+    private Integer status;
+    private String mark;
 
     public Integer getId() {
         return id;

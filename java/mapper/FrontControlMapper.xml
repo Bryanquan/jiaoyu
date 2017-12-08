@@ -7,10 +7,6 @@
         SELECT * FROM jy_front_control WHERE id=#{id}
     </select>
 
-    <select id="findByPid" parameterType="int" resultType="com.domain.FrontControl">
-           SELECT  * FROM jy_front_control WHERE pid=#{pid}
-    </select>
-
     <select id="getFrontControlAmount" resultType="int">
         SELECT COUNT(*) FROM jy_front_control
     </select>
@@ -32,12 +28,12 @@
     </update>
 
     <!-- 查找主条目-->
-    <select id="listById" resultType="com.domain.FrontControl">
+    <select id="findById" resultType="com.domain.FrontControl">
             SELECT * FROM jy_front_control WHERE pid=0
     </select>
 
     <!--查找附属条目-->
-    <select id="listByPid" resultType="com.domain.FrontControl">
+    <select id="findByPid" resultType="com.domain.FrontControl">
             SELECT * FROM jy_front_control WHERE pid!=0
     </select>
 

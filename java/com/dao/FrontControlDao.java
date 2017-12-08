@@ -10,8 +10,6 @@ import java.util.List;
 public interface FrontControlDao {
     public FrontControl findOne(Integer id);
 
-    public FrontControl findByPid(Integer pid);
-
     //查找pid为空主条目
     public List<FrontControl> findById();
 
