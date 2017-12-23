@@ -18,7 +18,7 @@ public class VipServiceImpl implements VipService {
         return vipDao.findOne(id);
     }
 
-    public Vip getByUsername(String usernname) {
+    public Vip findByUsername(String usernname) {
         return vipDao.findByUsername(usernname);
     }
 

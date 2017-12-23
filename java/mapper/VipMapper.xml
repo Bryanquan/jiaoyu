@@ -11,11 +11,11 @@
             SELECT * FROM jy_vip
     </select>
 
-    <select id="getVipAmount" resultType="int">
+    <select id="getVipAmount" resultType="java.lang.Integer">
              SELECT COUNT(*) FROM jy_vip
     </select>
 
-    <select id="findByUsername" parameterType="String" resultType="com.domain.Vip">
+    <select id="findByUsername" parameterType="java.lang.String" resultType="com.domain.Vip">
              SELECT  * FROM jy_vip  WHERE username=#{username}
     </select>
     <insert id="add" parameterType="com.domain.Vip">
@@ -31,7 +31,7 @@
              WHERE  id=#{id}
     </update>
 
-    <select id="listByPage" resultType="com.domain.Vip">
+    <select id="findByPage" resultType="com.domain.Vip">
              SELECT  * FROM jy_vip LIMIT #{0},#{1}
     </select>
 

@@ -13,7 +13,7 @@ public interface AdminDao {
 
     Admin findOne(Integer id);
 
-    Admin findByName(String username);
+    Admin findByUsername(String username);
 
     List<Admin> findAll();
 
@@ -28,6 +28,8 @@ public interface AdminDao {
     void update(Admin admin);
 
     void delete(Admin admin);
+
+    void updatePassword(Admin admin);
 
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
 public interface VipService {
     public Vip findOne(Integer id);
 
-    public Vip getByUsername(String usernname);
+    public Vip findByUsername(String usernname);
 
     public Pagination<Vip> paginationEntity(Pagination<Vip> pagination);
 

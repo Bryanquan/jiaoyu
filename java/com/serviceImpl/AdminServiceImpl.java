@@ -6,10 +6,11 @@ import com.domain.Admin;
 import com.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
-public class AdminServiceImpl implements AdminService{
+public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminDao adminDao;
 
@@ -18,10 +19,9 @@ public class AdminServiceImpl implements AdminService{
     }
 
 
-    public Admin findByName(String username) {
-        return adminDao.findByName(username);
+    public Admin findByUsername(String username) {
+        return adminDao.findByUsername(username);
     }
-
 
 
     public Admin findOne(String id) {
@@ -40,8 +40,8 @@ public class AdminServiceImpl implements AdminService{
 
 
     public Pagination<Admin> paginationEntity(Pagination<Admin> pagination) {
-        Integer amount=adminDao.getAdminAmount();
-        List<Admin> items=adminDao.paginationEntity(pagination);
+        Integer amount = adminDao.getAdminAmount();
+        List<Admin> items = adminDao.paginationEntity(pagination);
         pagination.setItems(items);
         pagination.setTotalItemsCount(amount);
         return pagination;
@@ -53,16 +53,21 @@ public class AdminServiceImpl implements AdminService{
     }
 
     public void add(Admin admin) {
-           adminDao.add(admin);
+        adminDao.add(admin);
     }
 
 
     public void update(Admin admin) {
-          adminDao.update(admin);
+        adminDao.update(admin);
     }
 
 
     public void delete(Admin admin) {
         adminDao.delete(admin);
     }
+
+    public void updatePassword(Admin admin) {
+        adminDao.updatePassword(admin);
+    }
+
 }

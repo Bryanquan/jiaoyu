@@ -8,7 +8,7 @@ public class Admin {
 
     private String useraccount;
 
-    private String name;
+    private String username;
 
     private String userpwd;
 
@@ -37,14 +37,14 @@ public class Admin {
         this.useraccount = useraccount;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
 
     @Required
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getUserpwd() {

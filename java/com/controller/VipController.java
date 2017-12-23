@@ -25,7 +25,7 @@ public class VipController {
     public String login(String name, String userpwd, HttpServletRequest request)
             throws IOException {
         String username = name;
-        Vip vip = vipService.getByUsername(username);
+        Vip vip = vipService.findByUsername(username);
         userpwd = Md5Util.md5(userpwd);
         /**
          *open the session
@@ -57,7 +57,7 @@ public class VipController {
         }
         //查找数据库里面是否有相同用户名的用户
         //不允许添加相同用户名的用户
-        if (CommonUtil.isNull(vipService.getByUsername(vip.getUsername()))) {
+        if (CommonUtil.isNull(vipService.findByUsername(vip.getUsername()))) {
             return "Admin/Vip/list";
         }
         String userpwd = Md5Util.md5(vip.getUserpwd());

@@ -13,7 +13,7 @@ public interface AdminService {
 
     Admin findOne(Integer id);
 
-    Admin findByName(String username);
+    Admin findByUsername(String username);
 
     Integer getAdminAmount();
 
@@ -26,4 +26,6 @@ public interface AdminService {
     void update(Admin admin);
 
     void delete(Admin admin);
+
+    void updatePassword(Admin admin);
 }
