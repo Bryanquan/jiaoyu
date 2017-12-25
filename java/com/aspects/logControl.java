@@ -6,7 +6,6 @@ import org.springframework.core.Ordered;
 
 @Aspect
 public class logControl implements Ordered {
-
     public logControl() {
     }
 

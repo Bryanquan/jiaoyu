@@ -7,7 +7,7 @@
               SELECT  * FROM jy_score WHERE  id=#{id}
     </select>
 
-    <select id="list" resultType="com.domain.Score">
+    <select id="findAll" resultType="com.domain.Score">
             SELECT * FROM jy_score
     </select>
 
@@ -71,7 +71,7 @@
 
     </update>
 
-    <select id="listBySchoolAndScore" parameterType="java.util.Map" resultType="com.domain.Score">
+    <select id="findBySchoolAndScore" parameterType="java.util.Map" resultType="com.domain.Score">
         SELECT * FROM jy_score WHERE
         <if test="params.pici!=null">
             and pici=#{pici}
